@@ -107,7 +107,7 @@ function func() {
   console.log(document.jap.ch1.value);
   console.log(Number(document.safe.ch2.value));
 }
-let yy = (!(let xx >= 5)) ? "big" : "small";
+let yy = (!(let zz >= 5)) ? "big" : "small";
 bit1=0x12345678 << 8;
 bit2=0x12345678 >> 8;
 bit3=0x87654321 >>> 8;
