@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="Shift_JIS"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
   <head>
@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" url="index.xhtml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="../javascript/script.js"></script>
+    <script type="application/ld+json" src="../json/package.json"></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
   </head>
   <body>
@@ -20,6 +21,21 @@
       <source media="(min-width: 32em)" srcset="https://avatars.githubusercontent.com/u/35629711?v=4" />
       <img src="https://avatars.githubusercontent.com/u/35629711?v=4" alt="decoboco-art-contest_2023" sizes="(min-width:460px) 200px, 100vw" />
     </picture>
+    <svg x=0 y=0 width=100 height=60 style="background-color: #ddd">
+      <polygon points="50 10, 70 30, 50 50, 30 30" fill="#99f" />
+      <line x1="10" y1="30" x2="190" y2="30" stroke="black" stroke-width="2" />
+      <rect x="5" y="5" width="30" height="30" stroke="black" fill="#fff" stroke-width="2" />
+      <polygon points="5 20, 20 5, 35 20, 20 35" stroke="black" fill="#fff" stroke-width="2" />
+      <circle cx="20" cy="20" r="15" stroke="black" fill="#fff" stroke-width="2" />
+      <ellipse cx="20" cy="20" rx="15" ry="8" stroke="black" fill="#fff" stroke-width="2" />
+      <path d="M 5 20 L 20 5 L 35 20 L 20 20" stroke="black" fill="transparent" stroke-width="2" />
+      <rect x="5" y="5" width="30" height="30" stroke="black" fill="#fff" stroke-width="2">
+        <animate attributeName="x" from="-30" to="400" dur="4s" repeatCount="indefinite" />
+      </rect>
+      <a xlink:href="http://www.yahoo.co.jp">
+          <polygon id="logomark-polyline" fill-rule="evenodd" clip-rule="evenodd" fill="#99f" points="200 10, 220 30, 200 50, 180 30"/>
+      </a>
+    </svg>
     <details>
       <summary>検索オプション</summary>
       <div>
@@ -272,5 +288,11 @@
       </div>
       <input type="button" value="Close" onclick="document.getElementById('dialog1').close()" />
     </dialog>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:prop-ja="http://ja.dbpedia.org/property/">
+      <rdf:Description rdf:about="http://ja.dbpedia.org/resource/東京タワー">
+        <prop-ja:住所 xml:lang="ja">芝公園4-2-8</prop-ja:住所>
+        <prop-ja:階数 xml:lang="ja">地上16階、地下2階</prop-ja:階数>
+      </rdf:Description>
+    </rdf:RDF>
   </body>
 </html>
