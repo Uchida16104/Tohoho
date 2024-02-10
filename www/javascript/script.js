@@ -108,11 +108,6 @@ try {
 } finally {
   console.log("finally");
 }
-export function hello_world() {
-  alert("Hello world!!");
-}
-import { hello_world } from "script.js";
-hello_world();
 function func() {
   console.log(document.jap.ch1.value);
   console.log(Number(document.safe.ch2.value));
