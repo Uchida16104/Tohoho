@@ -1,9 +1,9 @@
 alert("Hello world!!");
 console.log("Hello world!!");
 window.open("about:blank", "_blank");
-abc123 = 123;
-x = 5;
-y = 3;
+const abc123 = 123;
+var x = 5;
+let y = 3;
 alert(x + y);
 var a = 3;
 let b = 3;
@@ -22,7 +22,7 @@ console.log(d);
 for (let i = 0; i < 10; i++) {
   console.log(i);
 }
-n = 20;
+let n = 20;
 if (n < 10) {
   alert("Small!");
 } else if (n > 20) {
@@ -30,7 +30,7 @@ if (n < 10) {
 } else {
   alert("Normal");
 }
-k = 10;
+var k = 10;
 switch (k) {
 case 1:
   alert("One");
@@ -46,12 +46,12 @@ default:
   alert("Other");
   break;
 }
-j = 0;
+let j = 0;
 while (j < 10) {
   console.log(j);
   j++;
 }
-t = 0;
+let t = 0;
 do {
   console.log(t);
   t++;
@@ -72,7 +72,7 @@ for (var s = 0; s < 50; s++) {
 abc:
   for (var f = 0; f < 10; f++) {
     for (var g = 0; g < 10; g++) {
-      xx = f * 10 + g;
+      let xx = f * 10 + g;
       if (xx > 20) {
         break abc;
       }
@@ -82,7 +82,7 @@ abc:
 def:
   for (var p = 0; p < 10; p++) {
     for (var q = 0; q < 10; q++) {
-      rr = p * 10 + q;
+      let rr = p * 10 + q;
       if (rr == 55) {
         continue def;
       }
@@ -107,7 +107,7 @@ function func() {
   console.log(document.jap.ch1.value);
   console.log(Number(document.safe.ch2.value));
 }
-yy = (!(xx >= 5)) ? "big" : "small";
+let yy = (!(xx >= 5)) ? "big" : "small";
 bit1=0x12345678 << 8;
 bit2=0x12345678 >> 8;
 bit3=0x87654321 >>> 8;
@@ -164,7 +164,7 @@ class MyClass {
 }
 var object = new MyClass();
 object.func();
-foo = 123;
+var foo = 123;
 console.log(global.foo);
 console.log(globalThis);
 var obj = { name: "Tanaka", age: 26 };
