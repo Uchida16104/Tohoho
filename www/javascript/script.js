@@ -1,9 +1,5 @@
 alert("Hello world!!");
 console.log("Hello world!!");
-document.getElementById("dialog1").innerHTML = new Date().toLocaleString();
-setInterval(function() {
-  document.getElementById("menu1").innerHTML = new Date().toLocaleString();
-}, 1000);
 window.open("about:blank", "_blank");
 abc123 = 123;
 x = 5;
