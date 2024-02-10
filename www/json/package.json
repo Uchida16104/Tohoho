@@ -18,3 +18,30 @@
     { "name": "Suzuki", "age": 32 }
   ]
 }
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://news.example.com/20200412/article-123456/"
+  },
+  "headline": "記事のタイトル・・・",
+  "image": "https://news.exapmpe.com/20200412/img-123456.jpg",
+  "datePublished": "2020-04-12T18:02:08+09:00",
+  "dateModified": "2020-04-12T22:41:53+09:00",
+  "author": {
+    "@type": "Organization",
+    "name": "山田太郎"
+  },
+   "publisher": {
+    "@type": "Organization",
+    "name": "Exampleニュース",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://news.example.com/img/logo.png",
+      "width": 412,
+      "height": 68
+    }
+  },
+  "description": "記事の説明・・・・・"
+}
