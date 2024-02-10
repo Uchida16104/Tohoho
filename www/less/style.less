@@ -1,0 +1,12 @@
+@mode: invert;
+@usual: purple;
+@invert: orange;
+details{
+  width: 768px / 2;
+}
+dialog when(@mode = usual){
+  color: saturate(@usual, 25%);
+}
+dialog when(@mode = invert){
+  color: saturate(@invert, 75%);
+}
