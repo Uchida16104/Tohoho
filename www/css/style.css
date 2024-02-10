@@ -1,0 +1,22 @@
+@keyframes style {
+  from {
+    scale: 1.0;
+  }
+  to {
+    scale: 2.0;
+  }
+}
+div{
+  color: brown;
+}
+picture:hover,svg:hover{
+  display: flex;
+  image-rendering: pixelated;
+  animation: style 0.5s ease-in 1s infinite alternate both;
+}
+math::before{
+  content: "• ";
+}
+math::after{
+  content: " : ";
+}
