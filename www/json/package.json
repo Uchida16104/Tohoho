@@ -1,0 +1,20 @@
+{
+  "name": "Tanaka",
+  "age": 26
+  "pi": 3.14,
+  "planck_constant": 6.62607e-34,
+  "active_flag": true,
+  "delete_flag": false,
+  "user_info": {
+    "user_id": "A1234567",
+    "user_name": "Yamada Taro"
+  },
+  "color_list": [ "red", "green", "blue" ],
+  "num_list": [ 123, 456, 789 ],
+  "mix_list": [ "red", 456, null, true ],
+  "array_list": [ [ 12, 23 ], [ 34, 45 ], [ 56, 67 ] ],
+  "object_list": [
+    { "name": "Yanaka", "age": 26 },
+    { "name": "Suzuki", "age": 32 }
+  ]
+}
