@@ -1,5 +1,4 @@
 alert("Hello world!!");
-document.getElementById("logomark-polyline").innerHTML = "Hello world!!";
 console.log("Hello world!!");
 document.getElementById("dialog1").innerHTML = new Date().toLocaleString();
 setInterval(function() {
