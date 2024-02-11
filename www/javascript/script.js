@@ -155,9 +155,6 @@ if (p1 instanceof Person) {
 }
 var e = {x:123, y:456};
 delete e.x;
-obj.addEventListener("click", function() {
-  console.log(this);
-});
 class MyClass {
   func() { console.log(this); }
 }
