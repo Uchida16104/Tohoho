@@ -160,9 +160,6 @@ class MyClass {
 }
 var object = new MyClass();
 object.func();
-var foo = 123;
-console.log(global.foo);
-console.log(globalThis);
 var obj = { name: "Tanaka", age: 26 };
 var a1 = obj;	
 var a2 = new WeakRef(obj);
