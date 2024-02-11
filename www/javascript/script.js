@@ -128,8 +128,6 @@ xx >>>= 8;
 xx ||= 5;
 xx &&= 5;
 xx ??= 5;
-obj.foo = obj.foo ?? 60;
-console.log(response.body?.length);
 var obj = {
   name: "Yamada",
   age: 24
