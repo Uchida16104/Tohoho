@@ -1,6 +1,8 @@
 import Data.Char
 import Data.Char as Ch
 import qualified Data.Char as Ch
+import Foreign.C.Types
+foreign import ccall "plus" c_plus :: CInt -> IO CInt
 main1() {
   data_list = [100, 200, 300, 400]
   total = 0
@@ -169,3 +171,133 @@ data Point3 a = Point a a deriving Show
 main38 = do
   print $ Point3 100 200
   print $ Point3 100.0 200.0
+data Figure = Rect { x1, y1, x2, y2 :: Int }
+            | Circle { x, y, r :: Int }
+            deriving Show
+main39 = do
+  let a = Rect { x1 = 100, y1 = 100, x2 = 200, y2 = 200 }
+      b = Circle { x = 100, y = 100, r = 100 }
+  print a
+  print b
+area :: Figure -> Double
+area (Rect x1 y1 x2 y2) = fromIntegral ((x2 - x1) * (y2 - y1))
+area (Circle x y r) = (fromIntegral(r) * fromIntegral(r) * 3.14)
+main40 = do
+  let a = Rect { x1 = 100, y1 = 100, x2 = 200, y2 = 200 }
+      b = Circle { x = 100, y = 100, r = 50 }
+  print $ area a
+  print $ area b
+newtype Pixel = Pixel Int deriving Show
+main41 = do
+  let a = Pixel 300
+  print a
+type Person = (Name, Address)
+type Name = String
+type Address = None | Addr String
+class Foo a where
+    foo :: a -> String
+instance Foo Bool where
+    foo True = "Bool: True"
+    foo False = "Bool: False"
+instance Foo Int where
+    foo x = "Int: " ++ show x
+instance Foo Char where
+    foo x = "Char: " ++ [x]
+main42 = do
+    putStrLn $ foo True	
+    putStrLn $ foo (123::Int)
+    putStrLn $ foo 'A'
+{-# LANGUAGE FlexibleInstances #-}
+class Foo a where
+    foo :: a -> String
+instance Foo String where
+    foo x = "String: " ++ x
+main43 = do
+    putStrLn $ foo "ABC"
+fn :: Int -> Maybe String
+fn n
+    | n == 1 = Just "One"
+    | n == 2 = Just "Two"
+    | otherwise = Nothing
+main44 = do
+    print $ fn 1
+    print $ fn 2
+    print $ fn 3
+fn n = n * 2
+main45 = do
+    print $ fmap fn [1, 2, 3]
+    print $ fmap fn Nothing
+    print $ fmap fn (Just 5)
+    print $ fmap fn (2, 3)
+fn n = n * 2
+main46 = do
+    print $ fn <$> [1, 2, 3]
+    print $ fn <$> Nothing
+    print $ fn <$> (Just 5)
+    print $ fn <$> (2, 3)
+main47 = do
+    print $ pure (*2) <*> Just 5
+    print $ pure (*2) <*> [1, 2, 3]
+main48 = do
+    print $ [(*2), (*3)] <*> [1, 2, 3]
+class Applicative m => Monad (m :: * -> *) where
+  (>>=) :: m a -> (a -> m b) -> m b
+  return :: a -> m a
+fn x = return (2 * x)
+main49 = do
+    print $ [1, 2, 3] >>= fn
+    print $ Just 5 >>= fn
+    print $ Nothing >>= fn
+fn x = x * 2
+ans = map fn [1, 2, 3]
+main50 = print ans
+tax :: Double -> Double -> Double
+tax rate price = rate * price
+main51 = do
+  print $ tax 0.1 2500
+  print $ tax 0.1 3500
+tax :: Double -> Double -> Double
+tax rate price = rate * price
+jptax = tax 0.1
+main52 = do
+  print $ jptax 2500
+  print $ jptax 3500
+exp2a = (^2)
+exp2b = (2^)
+main53 = do
+  print $ exp2a 5
+  print $ exp2b 5
+function add1(x, y, z) {
+  return x + y + z;
+}
+function add2(x) {
+  return function(y, z) { return x + y + z; }
+}
+function add3(x) {
+  return function(y) { return function(z) { return x + y + z; } }
+}
+console.log(add1(1, 2, 3));
+console.log(add2(1)(2, 3));
+console.log(add3(1)(2)(3));
+add x y z = x + y + z
+main54 = do
+  print $ (add 1 2 3)
+  print $ (add 1) 2 3
+add1 :: Int -> Int -> Int -> Int
+add1 x y z = x + y + z
+add2 :: Int -> Int -> Int -> Int
+add2 = \x -> \y -> \z -> x + y + z
+add (x, y) = x + y
+main55 = print $ add (3, 5)
+fn x y z = do { print x; print y }
+main56 = fn (1+2) (3+4) (5+6)
+main57 = print $ take 5 [1..]
+int plus(int a)
+{
+    return a + 1;
+}
+plus :: Int -> IO Int
+plus = fmap fromIntegral . c_plus . fromIntegral
+main58 :: IO ()
+main58 = do
+  print =<< plus 5
