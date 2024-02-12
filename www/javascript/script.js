@@ -93,16 +93,6 @@ with (document) {
   console.log(x);
   console.log(y);
 }
-try {
-  error = doSomething();
-  if (error) {
-    throw "myException";
-  }
-} catch (e) {
-  console.log(e);
-} finally {
-  console.log("finally");
-}
 function func() {
   console.log(document.jap.ch1.value);
   console.log(Number(document.safe.ch2.value));
